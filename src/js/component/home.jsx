@@ -1,26 +1,27 @@
 import React from "react";
-
+import propTypes from 'prop-types';
 //include images into your bundle
 import rigoImage from "../../img/rigo-baby.jpg";
+import SimpleCounter from "./simpleCounter";
+import { calCount } from "../lib";
 
 //create your first component
-const Home = () => {
+const Home = ({count}) => {
 	return (
-		<div className="text-center">
-			<h1 className="text-center mt-5">Hello Rigo!</h1>
-			<p>
-				<img src={rigoImage} />
-			</p>
-			<a href="#" className="btn btn-success">
-				If you see this green button... bootstrap is working...
-			</a>
-			<p>
-				Made by{" "}
-				<a href="http://www.4geeksacademy.com">4Geeks Academy</a>, with
-				love!
-			</p>
-		</div>
+		<>
+		<SimpleCounter
+		sixDigit={calCount(count,100000)}
+		fiveDigit={calCount(count,10000)}
+		fourDigit={calCount(count,1000)}
+		threeDigit={calCount(count,100)}
+		twoDigit={calCount(count,10)}
+		oneDigit={calCount(count,1)}/>
+		</>
 	);
 };
+
+Home.propTypes = {
+	count: propTypes.number
+}
 
 export default Home;

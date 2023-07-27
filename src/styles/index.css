@@ -10,3 +10,20 @@
     import 'relative/path/to/stylesheet.scss';
 
 */
+
+.counter-display {
+    background: black;
+    width: auto;
+}
+.counter-display h1 {
+    font-size: 100px !important;
+}
+
+.each-row {
+    box-shadow: 12px 0 15px -4px rgba(31, 73, 125, 0.8), -12px 0 8px -4px rgba(31, 73, 125, 0.8);
+    padding: 10px;
+    margin-left: 5px;
+    margin: 20px;
+    width: 100px;
+    text-align: center;
+}
